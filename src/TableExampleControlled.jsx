@@ -12,7 +12,7 @@ import OpenInNew from 'material-ui/svg-icons/action/open-in-new';
 
 export default class TableExampleControlled extends Component {
   state = {
-    selected: [1]
+    selected: []
   };
 
   isSelected = index => {
