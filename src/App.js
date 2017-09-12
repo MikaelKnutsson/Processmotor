@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import './components/Button.jsx';
-import RaisedButton from './DialogExampleSimple.jsx';
-import Table from './TableExampleControlled';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import AdminLanding from './AdminLanding.jsx';
+import Landing from './Landing.jsx';
 
 class App extends Component {
   render() {
     return (
-      <MuiThemeProvider>
-        <div className="App">
-          <div className="App-header">
-            <h2>Agero Onboarding</h2>
-          </div>
-          <Table />
-          <RaisedButton />
+      <Router>
+        <div>
+          <Route exact path="/" component={Landing} />
+          <Route path="/adminLanding" component={AdminLanding} />
         </div>
-      </MuiThemeProvider>
+      </Router>
     );
   }
 }
