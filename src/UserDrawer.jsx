@@ -1,9 +1,9 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
 import OpenMenuButton from 'material-ui/svg-icons/navigation/menu';
 import IconButton from 'material-ui/IconButton';
+import Divider from 'material-ui/Divider';
 import { Link } from 'react-router-dom';
 
 class UserDrawer extends React.Component {
@@ -32,14 +32,20 @@ class UserDrawer extends React.Component {
           <Link to="/userLanding">
             <MenuItem style={{ color: 'white' }}> Hem </MenuItem>
           </Link>
-          <hr />
+          <Divider />
           <Link to="/userEconomy">
             <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
               Ekonomi
             </MenuItem>
           </Link>
           <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
-            Menu Item 2
+            IT-alternativ
+          </MenuItem>
+          <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
+            Konsultprofil
+          </MenuItem>
+          <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
+            Övrigt
           </MenuItem>
         </Drawer>
       </div>

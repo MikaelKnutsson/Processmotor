@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import UserAppHeader from './UserAppBar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -11,7 +10,7 @@ class UserLanding extends Component {
         <div className="User-App">
           <UserAppHeader />
 
-          <p>Heeej</p>
+          <h1>Välkommen till Ageros Onboardingsida</h1>
         </div>
       </MuiThemeProvider>
     );

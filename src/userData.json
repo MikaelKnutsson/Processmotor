@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "name": "Mikael Knutsson",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    },
+    {
+      "name": "Adam Paulsson",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    },
+    {
+      "name": "Jenny Andersson",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    },
+    {
+      "name": "Mikael Larsson",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    },
+    {
+      "name": "Peter Svensson",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    },
+    {
+      "name": "Lucas Becker",
+      "startDate": "2017-08-14",
+      "it": "Done",
+      "economy": "Not done",
+      "consulant": "Done"
+    }
+  ]
+}

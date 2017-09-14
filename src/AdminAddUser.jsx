@@ -4,14 +4,14 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import DatePicker from 'material-ui/DatePicker';
 
-/**
- * Dialog with action buttons. The actions are passed in as an array of React objects,
- * in this example [FlatButtons](/#/components/flat-button).
- *
- * You can also close this dialog by clicking outside the dialog, or with the 'Esc' key.
- */
-export default class DialogExampleSimple extends React.Component {
+const customContentStyle = {
+  height: '100%',
+  width: '25%'
+};
+
+export default class AdminAddUser extends React.Component {
   state = {
     open: false
   };
@@ -41,28 +41,27 @@ export default class DialogExampleSimple extends React.Component {
           <ContentAdd />
         </FloatingActionButton>
         <Dialog
-          title="Dialog With Actions"
+          className="User-App"
+          title="Lägg till medarbetare"
           actions={actions}
           modal={false}
+          contentStyle={customContentStyle}
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
           <div>
-            <TextField
-              hintText="Hint Text"
-              floatingLabelText="Floating Label Text"
-            />
+            <TextField hintText="Förnamn" floatingLabelText="Förnamn" />
             <br />
-
-            <TextField
-              hintText="Hint Text"
-              floatingLabelText="Floating Label Text"
-            />
+            <TextField hintText="Efternamn" floatingLabelText="Efternamn" />
             <br />
             <TextField
-              hintText="Hint Text"
-              floatingLabelText="Floating Label Text"
+              hintText="Personnummer"
+              floatingLabelText="Personnummer"
             />
+            <br />
+            <TextField hintText="E-mail" floatingLabelText="E-mail" />
+            <br />
+            <DatePicker floatingLabelText="Startdatum" hintText="Date Picker" />
             <br />
           </div>
         </Dialog>

@@ -3,15 +3,24 @@ import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import Toggle from 'material-ui/Toggle';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import TextField from 'material-ui/TextField';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import { Link } from 'react-router-dom';
 
 class AdminAppBar extends Component {
   state = {
-    logged: true
+    logged: true,
+    searchTerm: ''
+  };
+
+  props: {
+    shows: Array<Show>
+  };
+
+  handleSearchTermChange = (
+    event: SyntheticKeyboardEvent & { target: HTMLInputElement }
+  ) => {
+    this.setState({ searchTerm: event.target.value });
   };
 
   handleChange = (event, logged) => {
