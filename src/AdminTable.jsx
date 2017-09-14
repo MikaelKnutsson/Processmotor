@@ -8,28 +8,14 @@ import {
   TableRowColumn
 } from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
-
+import { List, ListItem } from 'material-ui/List';
 import preload from './userData.json';
-
+import SearchIcon from 'material-ui/svg-icons/action/search';
 import OpenInNew from 'material-ui/svg-icons/action/open-in-new';
 
 export default class AdminTable extends Component {
   state = {
-    selected: []
-  };
-  props: {
-    props: Show
-  };
-
-  isSelected = index => {
-    return this.state.selected.indexOf(index) !== -1;
-  };
-
-  handleRowSelection = selectedRows => {
-    this.setState({
-      selected: selectedRows,
-      searchTerm: ''
-    });
+    searchTerm: ''
   };
 
   handleSearchTermChange = (
@@ -38,20 +24,27 @@ export default class AdminTable extends Component {
     this.setState({ searchTerm: event.target.value });
   };
 
-  handleChange = (event, logged) => {
-    this.setState({ logged: logged });
-  };
-
   render() {
     return (
       <div>
-        <h1>{this.state.searchTerm}</h1>
-        <TextField
-          searchTerm={this.state.searchTerm}
-          showSearch
-          onChange={this.handleSearchTermChange}
-          hintText="Search"
-        />
+        <div style={{ position: 'relative', display: 'inline-block' }}>
+          <SearchIcon
+            style={{
+              position: 'absolute',
+              right: 0,
+              top: 15,
+              width: 20,
+              height: 20
+            }}
+          />
+          <TextField
+            onChange={this.handleSearchTermChange}
+            value={this.state.searchTerm}
+            type="text"
+            placeholder="Search"
+          />
+        </div>
+
         <Table onRowSelection={this.handleRowSelection}>
           <TableHeader>
             <TableRow>
@@ -63,18 +56,22 @@ export default class AdminTable extends Component {
               <TableHeaderColumn />
             </TableRow>
           </TableHeader>
+
           <TableBody>
             {preload.users
-              /*  .filter(user =>
-                `${user.name} ${user.startDate}`
-                  .toUpperCase()
-                  .indexOf(this.state.searchTerm.toUpperCase() >= 0)
-              ) */
+              .filter(
+                user =>
+                  `${user.name} ${user.startDate}`
+                    .toUpperCase()
+                    .indexOf(this.state.searchTerm.toUpperCase()) >= 0
+              )
               .map(user => (
                 <TableRow key={user.name} {...user}>
                   <TableRowColumn>{user.name}</TableRowColumn>
                   <TableRowColumn>{user.startDate}</TableRowColumn>
-                  <TableRowColumn>{user.it}</TableRowColumn>
+                  <TableRowColumn style={{ backgroundColor: 'green' }}>
+                    {user.it}
+                  </TableRowColumn>
                   <TableRowColumn>{user.economy}</TableRowColumn>
                   <TableRowColumn>{user.consulant}</TableRowColumn>
                   <TableRowColumn>

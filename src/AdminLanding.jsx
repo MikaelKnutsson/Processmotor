@@ -11,8 +11,8 @@ class AdminLanding extends Component {
       <MuiThemeProvider>
         <div className="Admin-App">
           <AdminAppBar />
-          <AdminSearch />
           <Table />
+          <hr />
           <RaisedButton />
         </div>
       </MuiThemeProvider>
