@@ -7,6 +7,10 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import UserDrawer from './UserDrawer.jsx';
 import { Link } from 'react-router-dom';
 
+const style = {
+  textDecoration: 'none'
+};
+
 class UserAppBar extends Component {
   state = {
     logged: true
@@ -36,7 +40,7 @@ class UserAppBar extends Component {
               <MenuItem primaryText="Send feedback" />
               <MenuItem primaryText="Settings" />
               <MenuItem primaryText="Help" />
-              <Link to="/">
+              <Link to="/" style={style}>
                 <MenuItem primaryText="Sign out" />
               </Link>
             </IconMenu>

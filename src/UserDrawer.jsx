@@ -6,6 +6,10 @@ import IconButton from 'material-ui/IconButton';
 import Divider from 'material-ui/Divider';
 import { Link } from 'react-router-dom';
 
+const style = {
+  textDecoration: 'none'
+};
+
 class UserDrawer extends React.Component {
   constructor(props) {
     super(props);
@@ -29,18 +33,20 @@ class UserDrawer extends React.Component {
           onRequestChange={open => this.setState({ open })}
           containerStyle={{ backgroundColor: '#00BCD4' }}
         >
-          <Link to="/userLanding">
+          <Link to="/userLanding" style={style}>
             <MenuItem style={{ color: 'white' }}> Hem </MenuItem>
           </Link>
           <Divider />
-          <Link to="/userEconomy">
+          <Link to="/userEconomy" style={style}>
             <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
               Ekonomi
             </MenuItem>
           </Link>
-          <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
-            IT-alternativ
-          </MenuItem>
+          <Link to="/userIt" style={style}>
+            <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
+              IT-alternativ
+            </MenuItem>
+          </Link>
           <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
             Konsultprofil
           </MenuItem>
