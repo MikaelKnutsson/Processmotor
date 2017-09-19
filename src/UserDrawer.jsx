@@ -39,7 +39,7 @@ class UserDrawer extends React.Component {
           <Divider />
           <Link to="/userEconomy" style={style}>
             <MenuItem onClick={this.handleClose} style={{ color: 'white' }}>
-              Ekonomi
+              {this.props.economy}
             </MenuItem>
           </Link>
           <Link to="/userIt" style={style}>

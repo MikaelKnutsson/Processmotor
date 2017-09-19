@@ -25,7 +25,7 @@ class UserAppBar extends Component {
       <div>
         <AppBar
           title="Onboarding Agero"
-          iconElementLeft={<UserDrawer />}
+          iconElementLeft={<UserDrawer economy="ekonomi" />}
           iconElementRight={
             <IconMenu
               iconButtonElement={
