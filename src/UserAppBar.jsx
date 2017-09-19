@@ -25,7 +25,7 @@ class UserAppBar extends Component {
       <div>
         <AppBar
           title="Onboarding Agero"
-          iconElementLeft={<UserDrawer economy="ekonomi" />}
+          iconElementLeft={<UserDrawer economy="Ekonomi" />}
           iconElementRight={
             <IconMenu
               iconButtonElement={
@@ -36,7 +36,7 @@ class UserAppBar extends Component {
               anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
               targetOrigin={{ horizontal: 'left', vertical: 'top' }}
             >
-              <MenuItem primaryText="Refresh" />
+              <MenuItem primaryText="Refreshhh" />
               <MenuItem primaryText="Send feedback" />
               <MenuItem primaryText="Settings" />
               <MenuItem primaryText="Help" />
